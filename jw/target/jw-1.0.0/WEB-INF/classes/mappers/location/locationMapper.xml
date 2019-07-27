@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="location">
+
+	<select id="index" resultType="com.jw.domain.location.LocationDTO">
+		SELECT title,lno FROM tbl_location_title ORDER BY regdate ASC
+	</select>
+	
+	<select id="view" parameterType="int" resultType="com.jw.domain.location.LocationDTO">
+		SELECT rno,lno,location,first_visit,refuse,second_visit FROM tbl_location_info WHERE lno = #{lno}
+	</select>
+	
+	<update id="update" parameterType="com.jw.domain.location.LocationDTO" >
+		<foreach collection="LocationDTO" item="lDto" separator=";"> 
+			UPDATE tbl_location_info
+				SET 
+				first_visit =  #{lDto.first_visit},
+				    second_visit = #{lDto.second_visit},
+				    regdate =  SYSDATE
+				WHERE lno = #{lDto.lno} AND rno = #{lDto.rno}
+		</foreach>
+	</update>
+	
+</mapper>
