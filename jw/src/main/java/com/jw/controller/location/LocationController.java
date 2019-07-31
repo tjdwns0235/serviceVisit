@@ -67,7 +67,7 @@ public class LocationController {
 		System.out.println("dkdkdk");
 		log.info("update 이동");
 		
-		lService.update();
+//		lService.update();
 		
 	}
 }

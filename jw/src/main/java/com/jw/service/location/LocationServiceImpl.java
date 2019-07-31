@@ -36,11 +36,11 @@ public class LocationServiceImpl implements LocationService {
 	}
 
 	@Override
-	public int update(JsonParser jsonParser) {
+	public int update() {
 		log.info("update 왔당");
-		
-		JsonArray jsonArray = (JsonArray) jsonParser.parse();
-		return lDao.update(lDtoa);
+		return 0;
+//		JsonArray jsonArray = (JsonArray) jsonParser.parse();
+//		return lDao.update(lDtoa);
 	}
 
 
