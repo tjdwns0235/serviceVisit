@@ -57,12 +57,7 @@ public class LocationController {
 //		  @RequestParam(value = "second_visit" )List<String> second_visit,
 //		  @RequestParam(value = "lno") List<Integer> lno,
 //		  @RequestParam(value = "rno") List<Integer> rno
-			LocationDTO lDto = new LocationDTO();
-		
-
-
-
-			출처: https://justjava.tistory.com/7 [Just Java]
+		LocationDTO lDto = new LocationDTO();
 		
 		System.out.println("dkdkdk");
 		log.info("update 이동");
